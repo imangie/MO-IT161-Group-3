@@ -1,0 +1,114 @@
+/* ============ Variables & base ============ */
+:root{
+  --cream: #F2ECE0;     /* page / best-sellers background */
+  --brown: #7E443B;     /* roaming banner bg */
+  --ink:   #000000;     /* black text */
+  --pill:  #405B41;     /* green button */
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+.wrap{ max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+/* ============ Roaming banner ============ */
+/* background: #7E443B, text: #F2ECE0, title: Inter SemiBold 36,
+   hours: Inter Light Italic 24 */
+.banner{
+  background: var(--brown);
+  color: var(--cream);
+  text-align: center;
+  padding: 40px 16px;
+  border-radius: 12px;
+  margin: 16px 0 28px;
+}
+.banner h2{
+  margin: 0 0 10px;
+  font-weight: 600;          /* SemiBold */
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: .02em;
+  color: var(--cream);
+}
+.banner .locs{
+  margin: 6px 0 10px;
+  font-size: 16px;
+  color: var(--cream);
+}
+.banner .hours{
+  margin: 0;
+  font-weight: 300;          /* Light */
+  font-style: italic;
+  font-size: 24px;
+  color: var(--cream);
+}
+
+/* ============ Best Sellers ============ */
+/* section bg: #F2ECE0; title: Inter SemiBold black;
+   names: Inter Medium 32; prices: Inter Regular 20 */
+.best-section{
+  background: var(--cream);
+  padding: 24px 16px 28px;
+  border-radius: 12px;
+}
+.best-title{
+  margin: 0 0 16px;
+  text-align: center;
+  font-weight: 600;          /* SemiBold */
+  color: var(--ink);
+  letter-spacing: .04em;
+}
+.cards{
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card{ width: 300px; max-width: 100%; text-align: center; }
+.card img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card .name{
+  margin-top: 10px;
+  font-weight: 500;          /* Medium */
+  font-size: 32px;
+  color: var(--ink);
+}
+.card .price{
+  margin-top: 4px;
+  font-weight: 400;          /* Regular */
+  font-size: 20px;
+  color: var(--ink);
+}
+
+/* CTA button: bg #405B41, radius 15, text #F2ECE0, Inter SemiBold 23 */
+.cta{ text-align: center; margin-top: 16px; }
+.btn-brewing{
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--pill);
+  color: var(--cream);
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;          /* SemiBold */
+  font-size: 23px;
+  line-height: 1.1;
+}
+.btn-brewing:hover{ filter: brightness(.95); }
+.btn-brewing:active{ transform: translateY(1px); }
+
+/* ============ Small screens ============ */
+@media (max-width: 520px){
+  .banner{ padding: 28px 14px; }
+  .banner h2{ font-size: 28px; }
+  .banner .hours{ font-size: 20px; }
+  .card{ width: 100%; }
+}
