@@ -1,27 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>The Roaming Bean</title>
-        <link rel="stylesheet" href="style.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <nav>
-            <a href="#HOME">HOME</a>
-            <a href="#MENU">MENU</a>
-            <a href="#OUR-STORY">OUR STORY</a>
-            <a href="#CONTACT-US">CONTACT US</a>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Roaming Bean</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <a href="#HOME">HOME</a>
+      <a href="#MENU">MENU</a>
+      <a href="#OUR-STORY">OUR STORY</a>
+      <a href="#CONTACT-US">CONTACT US</a>
+    </nav>
 
-        <section id="HOME">
-            <h1 class="main-title">THE ROAMING BEAN</h1>
-            <p class="tagline-title">Brewing Community, One Stop at a Time</p>
-            <button class="btn-primary">
-                Browse Our Brews
-                <img src="images/arrow frame.png" alt="btn-icon">
-            </button>
-        </section>
-    </body>
+    <section id="HOME">
+      <h1 class="main-title">THE ROAMING BEAN</h1>
+      <p class="tagline-title">Brewing Community, One Stop at a Time</p>
+      <button class="btn-primary">
+        Browse Our Brews
+        <img src="images/arrow frame.png" alt="btn-icon">
+      </button>
+    </section>
+
+    <section class="about">
+    <h1>ABOUT US</h1>
+
+    <!-- Our Story (Left-aligned) -->
+    <div class="about-section left-align">
+        <div class="about-image"></div>
+        <div class="about-text">
+        <h2>Our Story</h2>
+        <p>
+            At The Roaming Bean, we believe coffee is more than just a drink—it's an experience. 
+            We've turned a vintage trailer into a traveling coffee bar to bring high-quality brews 
+            and a sense of community directly to you, wherever we go.
+        </p>
+        </div>
+    </div>
+
+    <!-- Our Vision (Right-aligned) -->
+    <div class="about-section right-align reverse">
+        <div class="about-image"></div>
+        <div class="about-text">
+        <h2>Our Vision</h2>
+        <p>
+            Our vision is to become a traveling hub for connection, quality, and a shared love for 
+            great coffee. We're not just a coffee shop; we're a community on wheels, dedicated to 
+            bringing warmth, joy, and authenticity into every cup, one stop at a time.
+        </p>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===== WHERE WE’RE ROAMING (brown banner) ===== -->
+    <section id="roaming" class="banner" aria-labelledby="roaming-title">
+    <h2 id="roaming-title">WHERE WE’RE ROAMING</h2>
+
+    <p class="locs">
+        October 26, 2025 – BGC High Street<br />
+        November 2, 2025 – Poblacion, Makati
+    </p>
+
+    <p class="hours">
+        Monday – Friday: 7:00 AM – 9:00 PM<br />
+        Saturday – Sunday: 8:00 AM – 10:00 PM
+    </p>
+    </section>
+
+    <!-- ===== BEST SELLERS ===== -->
+    <section class="best-section" aria-labelledby="best-title">
+    <h2 id="best-title" class="best-title">BEST SELLERS</h2>
+
+    <div class="cards" id="bestsellers">
+        <figure class="card">
+        <img src="images/iced-spanish-latte.jpg" alt="Iced Spanish Latte" />
+        <figcaption>
+            <div class="name">Iced Spanish Latte</div>
+            <div class="price">185 Php</div>
+        </figcaption>
+        </figure>
+
+        <figure class="card">
+        <img src="images/americano.jpg" alt="Americano" />
+        <figcaption>
+            <div class="name">Americano</div>
+            <div class="price">125 Php</div>
+        </figcaption>
+        </figure>
+
+        <figure class="card">
+        <img src="images/iced-matcha-latte.jpg" alt="Iced Matcha Latte" />
+        <figcaption>
+            <div class="name">Iced Matcha Latte</div>
+            <div class="price">210 Php</div>
+        </figcaption>
+        </figure>
+    </div>
+
+    <p class="cta">
+        <a class="btn-brewing" href="#menu">See What’s Brewing</a>
+    </p>
+    </section>
+  </body>
 </html>

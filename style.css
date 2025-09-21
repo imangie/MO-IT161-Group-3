@@ -2,6 +2,10 @@
     --primary-color: #F2ECE0;
     --secondary-color: #405B41;
     --red-accent: #7E443B;
+    --cream: #F2ECE0;     /* page / best-sellers background */
+    --brown: #7E443B;     /* roaming banner bg */
+    --ink:   #000000;     /* black text */
+    --pill:  #405B41;     /* green button */
 }
 
 * {
@@ -21,13 +25,64 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 50px;
+    padding: 15px 50px;
     gap: 150px;
     background-color: var(--secondary-color);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Navigation links */
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect: underline animation */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hover color change */
+nav a:hover {
+    color: white;
+}
+
+/* Active link style (for current section) */
+nav a.active {
+    font-weight: 700;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+body {
+    background-color: var(--primary-color);
 }
 
 #HOME {
-    min-height: 50vh;
+    min-height: 60vh;
     background-image: url('./images/Rectangle\ 7.png');
     background-size: cover;
     background-position: center;
@@ -73,8 +128,164 @@ nav {
     transition: background-color 0.3s ease;
 }
 
+.btn-primary:hover{ filter: brightness(.95); }
+.btn-primary:active{ transform: translateY(1px); }
+
 .btn-icon {
     width: 33px;
     height: 33px;
     margin-left: 10px;
 }
+
+/* About Section Styling */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: var(--secondary-color);
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    line-height: 1.6;
+}
+
+/* About Section Containers */
+.about-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Left-aligned section (Our Story) */
+.about-section.left-align {
+    flex-direction: row; /* image then text */
+}
+
+/* Right-aligned section (Our Vision) */
+.about-section.right-align {
+    flex-direction: row-reverse; /* text then image */
+}
+
+/* Image placeholder size */
+.about-image {
+    width: 555px;
+    height: 207px;
+    background-color: lightgray;
+    border-radius: 12px;
+}
+
+.about-text {
+    width: 45%;
+    text-align: left;
+}
+
+/* Best Sellers Section Styling */
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+.wrap{ max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+/* ============ Roaming banner ============ */
+/* background: #7E443B, text: #F2ECE0, title: Inter SemiBold 36,
+   hours: Inter Light Italic 24 */
+.banner{
+  background: var(--brown);
+  color: var(--cream);
+  text-align: center;
+  padding: 130px 16px;
+  margin: 8px 0 80px;
+}
+.banner h2{
+  margin: 0 0 40px;
+  font-weight: 600;          /* SemiBold */
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: .02em;
+  color: var(--cream);
+}
+.banner .locs{
+  margin: 6px 0 30px;
+  font-size: 24px;
+  color: var(--cream);
+}
+.banner .hours{
+  margin: 0;
+  font-weight: 300;          /* Light */
+  font-style: italic;
+  font-size: 24px;
+  color: var(--cream);
+}
+
+/* ============ Best Sellers ============ */
+/* section bg: #F2ECE0; title: Inter SemiBold black;
+   names: Inter Medium 32; prices: Inter Regular 20 */
+.best-section{
+  padding: 24px 16px 28px;
+  border-radius: 12px;
+}
+.best-title{
+  margin: 0 0 45px;
+  text-align: center;
+  font-weight: 600;          /* SemiBold */
+  color: var(--ink);
+  letter-spacing: .04em;
+}
+.cards{
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card{ width: 300px; max-width: 100%; text-align: center; }
+.card img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.card .name{
+  margin-top: 15px;
+  font-weight: 500;          /* Medium */
+  font-size: 24px;
+  color: var(--ink);
+}
+.card .price{
+  margin-top: 4px;
+  font-weight: 400;          /* Regular */
+  font-size: 18px;
+  color: var(--ink);
+}
+
+/* CTA button: bg #405B41, radius 15, text #F2ECE0, Inter SemiBold 23 */
+.cta{ text-align: center; margin-top: 16px; }
+.btn-brewing{
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--pill);
+  color: var(--cream);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;          /* SemiBold */
+  font-size: 23px;
+  line-height: 1.1;
+  margin-top: 70px;
+}
+.btn-brewing:hover{ filter: brightness(.95); }
+.btn-brewing:active{ transform: translateY(1px); }
