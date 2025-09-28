@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — The Roaming Bean</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="menu.html">MENU</a>
+    <a href="our-story.html">OUR STORY</a>
+    <a href="contact.html">CONTACT US</a>
+  </nav>
+
+  <main class="container" role="main">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h1 id="contact-title" class="contact__title">CONTACT & CONNECT WITH US</h1>
+
+      <div class="contact__icons">
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:hello@roamingbean.com"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <div class="contact__info">
+        <p><a href="mailto:hello@roamingbean.com">hello@roamingbean.com</a></p>
+        <p><strong>Call or Text:</strong> +63 912 345 6789</p>
+      </div>
+
+      <p class="contact__schedule">
+        <strong>Find Our Weekly Schedule:</strong> <a href="#">Where We're Roaming</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo"></footer>
+</body>
+</html>
 
