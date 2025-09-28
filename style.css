@@ -395,3 +395,152 @@ body{
 .where-to-find-us {
     font-weight: 600;
 }
+
+/* MENU PAGE */
+.menu-container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-title {
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
+  font-size: 80px;
+  text-align: center;
+  color: #2e4a2e;
+  margin-top: 40px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 250px;   /* increase spacing between columns */
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.menu-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 40px; /* adds gap between categories */
+}
+
+.subtitle {
+  font-size: 24px;
+  font-style: italic;
+  color: #a44;
+  margin-bottom: 8px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 10px 0 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: flex-start; /* keep items side by side */
+  font-size: 24px;
+  margin: 6px 0;
+}
+
+ul li span:first-child {
+  flex: 1;
+  text-align: left;
+  padding-right: 40px;   /* 👈 adds space before the price */
+}
+
+ul li span:last-child {
+  text-align: right;
+  min-width: 60px;       /* keeps prices aligned */
+}
+
+/* ---------- OUR STORY ---------- */
+/* Text fills left; truck sits larger & lower-right, no overlap */
+.about{
+  display:grid;
+  /* copy column = all remaining width after truck (260) + gap (20) */
+  grid-template-columns: minmax(0, calc(100% - 280px)) 260px;  /* copy | art */
+  grid-template-areas:
+    "title title"
+    "copy  art";
+  column-gap:22px;
+  align-items:end;             /* keep the truck to the bottom of the section */
+  padding:40px 24px 70px;      /* extra bottom space so truck can sit lower */
+}
+
+.about__title{
+  grid-area:title;
+  margin:0 0 16px;
+  text-align:center;
+  font-family:"Crimson Text", serif;
+  font-weight:600;
+  font-size:clamp(56px, 7.5vw, 92px);
+  line-height:1.05;
+  letter-spacing:.01em;
+  color:var(--green);
+  text-transform:uppercase;
+}
+
+.about__copy{
+  grid-area:copy;
+  max-width:none;              /* allow full column width */
+  margin:0;
+}
+
+.about__copy p{
+  margin:0 0 16px;
+  font-size:clamp(18px, 1.8vw, 21px);
+  line-height:1.52;
+  color:var(--ink);
+}
+
+.about__divider{
+  border:0;
+  border-top:2px solid rgba(0,0,0,.15);
+  width:88%;                   /* extend divider to match wider copy */
+  margin:10px 0 16px;
+}
+
+.about__signoff{ margin-top:6px; font-style:italic; }
+
+/* Truck column (bigger + lower-right) */
+.about__art{
+  grid-area:art;
+  justify-self:end;            /* push to the right edge */
+  align-self:end;              /* anchor to bottom of section */
+  margin:0 6px 6px 0;          /* tiny inset from edges */
+  display:block;
+}
+.about__art img{
+  width:260px;                 /* bigger truck */
+  height:auto;
+  opacity:.95;
+  display:block;
+}
+
+/* ---------- Responsive (stack on smaller screens) ---------- */
+@media (max-width:980px){
+  .about{
+    display:block;
+    padding-bottom:40px;
+  }
+  .about__copy{ max-width:980px; margin:0 auto; }
+  .about__divider{ width:70%; margin:10px auto 16px; }
+  .about__art{ display:flex; justify-content:center; margin-top:14px; }
+  .about__art img{ width:200px; }
+}
+
+@media (max-width:520px){
+  .about__title{ font-size:48px; }
+  .about__copy p{ font-size:20px; }
+  .about__divider{ width:56%; }
+}
