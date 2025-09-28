@@ -1,4 +1,4 @@
-echo "# The Roaming Bean ☕
+# The Roaming Bean ☕
 
 A simple coffee shop website project for **MO-IT161 Group 3**.  
 This project showcases a fictional café, *The Roaming Bean*, with pages that include a homepage, menu, and our story.  
