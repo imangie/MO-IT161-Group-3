@@ -23,7 +23,7 @@ style.css          # Main stylesheet
 
 ## 👩‍💻 Technologies Used
 - **HTML5** – Page structure  
-- **CSS3** – Styling and layout (flexbox, grid)
+- **CSS3** – Styling and layout
 
 ---
 
