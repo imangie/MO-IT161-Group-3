@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu — The Roaming Bean</title>
+  <title>Our Story — The Roaming Bean</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1 class="menu-title">Menu</h1>
-    <!-- Add menu items here -->
-     <div class="menu-grid">
-      <!-- Left Column -->
-      <div class="menu-section">
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="menu.html">MENU</a>
+    <a href="our-story.html">OUR STORY</a>
+    <a href="#CONTACT-US">CONTACT US</a>
+  </nav>
+
+  <main class="container" role="main">
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h1 id="about-title" class="about__title">OUR STORY</h1>
+
+      <div class="about__copy">
         <h2>Brewed to Perfection</h2>
         <p class="subtitle">Coffee</p>
         <hr>
@@ -28,10 +34,7 @@
           <li><span>Americano</span><span>₱110</span></li>
           <li><span>Caffè Latte</span><span>₱130</span></li>
         </ul>
-      </div>
 
-      <!-- Right Column -->
-      <div class="menu-section">
         <h2>Beyond the Bean</h2>
         <p class="subtitle">Not Coffee</p>
         <hr>
@@ -52,7 +55,13 @@
           <li><span>Cheese Ensaymada</span><span>₱85</span></li>
         </ul>
       </div>
-    </div>
+
+      <figure class="about__art">
+        <img src="images/camper-trailer.png" alt="Illustration of a vintage coffee camper trailer" />
+      </figure>
+    </section>
   </main>
+
+  <footer class="footer" role="contentinfo"></footer>
 </body>
 </html>
