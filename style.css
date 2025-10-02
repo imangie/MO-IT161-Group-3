@@ -1,3 +1,13 @@
+nav a.active {
+  font-weight: 700; /* bold */
+  background: #0077cc; /* highlight background */
+  color: #fff;        /* white text */
+  border-radius: 5px; /* rounded corners */
+}
+
+nav a.active::after {
+  width: 100%; /* underline */
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 :root {
@@ -543,4 +553,9 @@ ul li span:last-child {
   .about__title{ font-size:48px; }
   .about__copy p{ font-size:20px; }
   .about__divider{ width:56%; }
+}
+nav a.active {
+  color: #fff;
+  background: #0077cc;
+  border-radius: 5px;
 }
