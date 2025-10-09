@@ -139,23 +139,23 @@ body {
 }
 
 /* About Section Styling */
-.about {
+.about-us {
     padding: 80px 10%;
     text-align: center;
 }
 
-.about h1 {
+.about-us h1 {
     font-size: 40px;
     margin-bottom: 60px;
     color: var(--secondary-color);
 }
 
-.about h2 {
+.about-us h2 {
     font-size: 32px;
     margin-bottom: 15px;
 }
 
-.about p {
+.about-us p {
     line-height: 1.6;
 }
 
@@ -185,6 +185,23 @@ body {
     height: 207px;
     background-color: lightgray;
     border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.story-img {
+    object-position: 50% 30%; /* adjust as needed */
+}
+
+.vision-img {
+    object-position: 50% 50%; /* adjust as needed */
 }
 
 .about-text {
@@ -241,6 +258,16 @@ body{
   padding: 24px 16px 28px;
   border-radius: 12px;
 }
+
+#bestsellers img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#bestsellers img.hovered {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
 .best-title{
   margin: 0 0 45px;
   text-align: center;
@@ -336,6 +363,20 @@ body{
     padding: 10px 20px;
     border-radius: 8px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Specials Hover Effect */
+#specials img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#specials img.hovered {
+  transform: scale(1.015);
+  filter: brightness(1.1);
+}
+
+#specials img.hovered + .overlay-text {
+  opacity: 1;
 }
 
 /* LIMITED EDITION SECTION */
@@ -464,17 +505,14 @@ ul li span:last-child {
 }
 
 /* ---------- OUR STORY ---------- */
-/* Text fills left; truck sits larger & lower-right, no overlap */
-.about{
-  display:grid;
-  /* copy column = all remaining width after truck (260) + gap (20) */
-  grid-template-columns: minmax(0, calc(100% - 280px)) 260px;  /* copy | art */
-  grid-template-areas:
-    "title title"
-    "copy  art";
-  column-gap:22px;
-  align-items:end;             /* keep the truck to the bottom of the section */
-  padding:40px 24px 70px;      /* extra bottom space so truck can sit lower */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 40px 24px 100px; /* space for image at bottom */
+  text-align: center;
+  overflow: hidden;  /* hides horizontal scrollbar */
 }
 
 .about__title{
@@ -484,16 +522,14 @@ ul li span:last-child {
   font-family:"Crimson Text", serif;
   font-weight:600;
   font-size:clamp(56px, 7.5vw, 92px);
-  line-height:1.05;
-  letter-spacing:.01em;
   color:var(--green);
   text-transform:uppercase;
+  margin-top: 10px;
 }
 
-.about__copy{
-  grid-area:copy;
-  max-width:none;              /* allow full column width */
-  margin:0;
+.about__copy {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .about__copy p{
@@ -520,11 +556,39 @@ ul li span:last-child {
   margin:0 6px 6px 0;          /* tiny inset from edges */
   display:block;
 }
-.about__art img{
-  width:260px;                 /* bigger truck */
-  height:auto;
-  opacity:.95;
+
+.about__art img {
+  width: min(40vw, 500px);  /* scales with screen size but caps at 500px */
+  height: auto;
+  opacity: 0.95;
+  display: block;
+  max-width: 100%;          /* prevents overflow of the parent */
+  object-fit: contain;
+}
+
+/* Nav Highlight */
+nav a.active,
+nav a.active:link,
+nav a.active:visited,
+nav a.active:hover,
+nav a.active:focus {
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 4px 8px;
+  text-decoration: none !important;
+  outline: none;
+}
+
+/* keep the underline animation working if you use ::after */
+nav a.active::after {
+  content: "";
   display:block;
+  height:2px;
+  background:#fff;
+  width:100%;
+  margin-top:4px;
+  border-radius:2px;
 }
 
 /* ---------- Responsive (stack on smaller screens) ---------- */
@@ -544,3 +608,6 @@ ul li span:last-child {
   .about__copy p{ font-size:20px; }
   .about__divider{ width:56%; }
 }
+
+
+

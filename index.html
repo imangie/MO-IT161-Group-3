@@ -6,13 +6,14 @@
     <title>The Roaming Bean</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav>
       <a href="index.html">HOME</a>
       <a href="menu.html">MENU</a>
       <a href="our-story.html">OUR STORY</a>
-      <a href="#CONTACT-US">CONTACT US</a>
+      <a href="index.html#CONTACT-US">CONTACT US</a>
     </nav>
 
     <section id="HOME">
@@ -24,12 +25,14 @@
         </a>
     </section>
 
-    <section class="about">
+    <section class="about-us">
     <h1>ABOUT US</h1>
 
     <!-- Our Story (Left-aligned) -->
     <div class="about-section left-align">
-        <div class="about-image"></div>
+        <div class="about-image">
+          <img src="images/coffee-showcase.jpg" alt="Person holding a cup of coffee" class="story-img"/>
+        </div>
         <div class="about-text">
         <h2>Our Story</h2>
         <p>
@@ -42,7 +45,9 @@
 
     <!-- Our Vision (Right-aligned) -->
     <div class="about-section right-align reverse">
-        <div class="about-image"></div>
+        <div class="about-image">
+          <img src="images/roaming-trailer.png" alt="The Roaming Bean on the Road" class="vision-img" />
+        </div>
         <div class="about-text">
         <h2>Our Vision</h2>
         <p>
@@ -104,7 +109,7 @@
     </a>
     </section>
 
-    <!-- ===== SPECIALS===== -->
+        <!-- ===== SPECIALS===== -->
     <section id="specials">
       <h2 class="specials-title">SPECIALS</h2>
 
@@ -130,29 +135,32 @@
 
       <div class="limited">
         <h3 class="limited-text">Limited Time Offer!</h3>
-        <p class="limited-code">Show this code at the trailer to get 10% off: <span class="code-highlight">ROAM10</span>
+        <p class="limited-code">Show this code at the trailer to get 10% off: 
+          <span class="code-highlight">ROAM10</span>
         </p>
       </div>
     </section>
-  </body>
 
-  <!-- ===== FOOTER ===== -->
-  <footer id="CONTACT-US">
-    <div class="footer-content">
-      <div class="contact-title">
-        <h1>CONTACT & CONNECT WITH US</h1>
+    <!-- ===== FOOTER ===== -->
+    <footer id="CONTACT-US">
+      <div class="footer-content">
+        <div class="contact-title">
+          <h1>CONTACT & CONNECT WITH US</h1>
+        </div>
+        <div class="social-media-icons">
+          <img src="images/instagram.png" alt="instagram icon" />
+          <img src="images/tiktok.png" alt="titkok icon" />
+          <img src="images/facebook.png" alt="facebook icon" /> 
+          <img src="images/email.png" alt="email icon" />
+        </div>
+        <div class="contact-info">
+          <p>hello@roamingbean.com</p>
+          <p><span class="number">Call or Text:</span> +63 912 345 6789</p>
+        </div>
+        <div class="weekly-schedule">
+          <p><span class="where-to-find-us">Find Our Weekly Schedule:</span> Where We’re Roaming</p>
+        </div>
       </div>
-      <div class="social-media-icons">
-        <img src="images/instagram.png" alt="instagram icon" />
-        <img src="images/tiktok.png" alt="titkok icon" />
-        <img src="images/facebook.png" alt="facebook icon" /> 
-        <img src="images/email.png" alt="email icon" />
-      </div>
-      <div class="contact-info">
-        <p>hello@roamingbean.com</p>
-        <p> <span class="number">Call or Text:</span> +63 912 345 6789 </p>
-      </div>
-      <div class="weekly-schedule">
-        <p><span class="where-to-find-us">Find Our Weekly Schedule:</span> Where We’re Roaming</p>
-      </div>
+    </footer>
+  </body>
 </html>
