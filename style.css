@@ -11,9 +11,9 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -79,7 +79,10 @@ nav a.active::after {
 }
 
 body {
-    background-color: var(--primary-color);
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--ink);
 }
 
 #HOME {
@@ -169,6 +172,11 @@ body {
     justify-content: center;
 }
 
+.about-text p, 
+.vision-text p {
+  font-size: 18px;
+}
+
 /* Left-aligned section (Our Story) */
 .about-section.left-align {
     flex-direction: row; /* image then text */
@@ -184,7 +192,7 @@ body {
     width: 555px;
     height: 207px;
     background-color: lightgray;
-    border-radius: 12px;
+    border-radius: 5px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -210,14 +218,10 @@ body {
 }
 
 /* Best Sellers Section Styling */
-*{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
-body{
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--ink);
-  background: var(--cream);
+html {
+  scroll-behavior: smooth;
 }
+
 .wrap{ max-width: 1100px; margin: 0 auto; padding: 16px; }
 
 /* ============ Roaming banner ============ */
@@ -227,7 +231,7 @@ body{
   background: var(--brown);
   color: var(--cream);
   text-align: center;
-  padding: 130px 16px;
+  padding: 115px 16px;
   margin: 8px 0 80px;
 }
 .banner h2{
@@ -281,6 +285,7 @@ body{
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .card{ width: 300px; max-width: 100%; text-align: center; }
 .card img{
   width: 100%;
@@ -348,6 +353,12 @@ body{
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
+}
+
+/* Overlay text on left side */
+.desc-title {
+    font-family: 'Crimson Text', serif;
+    font-size: 55px;
 }
 
 /* Overlay text on left side */
