@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Roaming Bean</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Roaming Bean</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- ✅ Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
 
-  <script src="script.js" defer></script>
-</head>
   <body>
+    <!-- ===== NAVIGATION ===== -->
     <nav>
       <a href="index.html">HOME</a>
       <a href="menu.html">MENU</a>
@@ -19,152 +26,216 @@
       <a href="index.html#CONTACT-US">CONTACT US</a>
     </nav>
 
-    <section id="HOME">
+    <!-- ===== HERO SECTION ===== -->
+    <section id="HOME" class="text-center py-5">
       <h1 class="main-title">THE ROAMING BEAN</h1>
       <p class="tagline-title">Brewing Community, One Stop at a Time</p>
-        <a href="menu.html" class="btn-primary">
-          Browse Our Brews
-          <img src="images/arrow frame.png" alt="btn-icon">
-        </a>
+      <a href="menu.html" class="btn btn-primary mt-3">
+        Browse Our Brews
+        <img src="images/arrow frame.png" alt="btn-icon" />
+      </a>
     </section>
 
-    <section class="about-us">
-    <h1>ABOUT US</h1>
+    <!-- ===== ABOUT US ===== -->
+    <section class="about-us py-5">
+      <div class="container">
+        <h1 class="text-center mb-5">ABOUT US</h1>
 
-    <!-- Our Story (Left-aligned) -->
-    <div class="about-section left-align">
-        <div class="about-image">
-          <img src="images/coffee-showcase.jpg" alt="Person holding a cup of coffee" class="story-img"/>
-        </div>
-        <div class="about-text">
-        <h2>Our Story</h2>
-        <p class="story-text">
-            At The Roaming Bean, we believe coffee is more than just a drink—it's an experience. 
-            We've turned a vintage trailer into a traveling coffee bar to bring high-quality brews 
-            and a sense of community directly to you, wherever we go.
-        </p>
-        </div>
-    </div>
+        <!-- Our Story -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6">
+            <div class="about-image text-center mb-4 mb-md-0">
+              <img
+                src="images/coffee-showcase.jpg"
+                alt="Person holding a cup of coffee"
+                class="img-fluid rounded story-img"
+              />
+            </div>
+          </div>
 
-    <!-- Our Vision (Right-aligned) -->
-    <div class="about-section right-align reverse">
-        <div class="about-image">
-          <img src="images/roaming-trailer.png" alt="The Roaming Bean on the Road" class="vision-img" />
+          <div class="col-md-6">
+            <div class="about-text">
+              <h2>Our Story</h2>
+              <p class="story-text">
+                At The Roaming Bean, we believe coffee is more than just a
+                drink—it's an experience. We've turned a vintage trailer into a
+                traveling coffee bar to bring high-quality brews and a sense of
+                community directly to you, wherever we go.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="about-text">
-        <h2>Our Vision</h2>
-        <p class="vision-text">
-            Our vision is to become a traveling hub for connection, quality, and a shared love for 
-            great coffee. We're not just a coffee shop; we're a community on wheels, dedicated to 
-            bringing warmth, joy, and authenticity into every cup, one stop at a time.
-        </p>
+
+        <!-- Our Vision -->
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+          <div class="col-md-6">
+            <div class="about-text mt-4 mt-md-0">
+              <h2>Our Vision</h2>
+              <p class="vision-text">
+                Our vision is to become a traveling hub for connection, quality,
+                and a shared love for great coffee. We're not just a coffee
+                shop; we're a community on wheels, dedicated to bringing warmth,
+                joy, and authenticity into every cup, one stop at a time.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-center">
+            <img
+              src="images/roaming-trailer.png"
+              alt="The Roaming Bean on the Road"
+              class="img-fluid rounded vision-img"
+            />
+          </div>
         </div>
-    </div>
+      </div>
     </section>
 
-    <!-- ===== WHERE WE’RE ROAMING (brown banner) ===== -->
-    <section id="roaming" class="banner" aria-labelledby="roaming-title">
-    <h2 id="roaming-title">WHERE WE’RE ROAMING</h2>
+    <!-- ===== WHERE WE’RE ROAMING ===== -->
+    <section id="roaming" class="banner text-center py-5">
+      <h2 id="roaming-title">WHERE WE’RE ROAMING</h2>
 
-    <p class="locs">
+      <p class="locs">
         October 26, 2025 – BGC High Street<br />
         November 2, 2025 – Poblacion, Makati
-    </p>
+      </p>
 
-    <p class="hours">
+      <p class="hours">
         Monday – Friday: 7:00 AM – 9:00 PM<br />
         Saturday – Sunday: 8:00 AM – 10:00 PM
-    </p>
+      </p>
     </section>
 
     <!-- ===== BEST SELLERS ===== -->
-    <section class="best-section" aria-labelledby="best-title">
-    <h2 id="best-title" class="best-title">BEST SELLERS</h2>
+    <section class="best-section text-center py-5" aria-labelledby="best-title">
+      <h2 id="best-title" class="best-title mb-4">BEST SELLERS</h2>
 
-    <div class="cards" id="bestsellers">
-        <figure class="card">
-        <img src="images/iced-spanish-latte.jpg" alt="Iced Spanish Latte" />
-        <figcaption>
-            <div class="name">Iced Spanish Latte</div>
-            <div class="price">185 Php</div>
-        </figcaption>
-        </figure>
+      <div class="container">
+        <div class="row justify-content-center g-4" id="bestsellers">
+          <div class="col-md-4">
+            <figure class="card h-100">
+              <img
+                src="images/iced-spanish-latte.jpg"
+                alt="Iced Spanish Latte"
+                class="img-fluid"
+              />
+              <figcaption>
+                <div class="name">Iced Spanish Latte</div>
+                <div class="price">185 Php</div>
+              </figcaption>
+            </figure>
+          </div>
 
-        <figure class="card">
-        <img src="images/americano.jpg" alt="Americano" />
-        <figcaption>
-            <div class="name">Americano</div>
-            <div class="price">125 Php</div>
-        </figcaption>
-        </figure>
+          <div class="col-md-4">
+            <figure class="card h-100">
+              <img
+                src="images/americano.jpg"
+                alt="Americano"
+                class="img-fluid"
+              />
+              <figcaption>
+                <div class="name">Americano</div>
+                <div class="price">125 Php</div>
+              </figcaption>
+            </figure>
+          </div>
 
-        <figure class="card">
-        <img src="images/iced-matcha-latte.jpg" alt="Iced Matcha Latte" />
-        <figcaption>
-            <div class="name">Iced Matcha Latte</div>
-            <div class="price">210 Php</div>
-        </figcaption>
-        </figure>
-    </div>
+          <div class="col-md-4">
+            <figure class="card h-100">
+              <img
+                src="images/iced-matcha-latte.jpg"
+                alt="Iced Matcha Latte"
+                class="img-fluid"
+              />
+              <figcaption>
+                <div class="name">Iced Matcha Latte</div>
+                <div class="price">210 Php</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
 
-    <a href="menu.html" class="btn-brewing">
-      See What’s Brewing
-    </a>
+      <a href="menu.html" class="btn btn-outline-primary mt-4">
+        See What’s Brewing
+      </a>
     </section>
 
-        <!-- ===== SPECIALS===== -->
-    <section id="specials">
-      <h2 class="specials-title">SPECIALS</h2>
+    <!-- ===== SPECIALS ===== -->
+    <section id="specials" class="py-5 text-center">
+      <h2 class="specials-title mb-5">SPECIALS</h2>
 
-      <div class="specials-image-wrapper">
-        <div class="autumn-spice-latte">
-          <img src="images/autumn-spice-latte.png" alt="Autumn Spice Latte">
-          <div class="overlay-text">
-            <h3 class="desc-title">Autumn Spice Latte</h3>
-            <p class="desc">a cozy blend for crisp days.</p>
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6">
+            <div class="autumn-spice-latte position-relative">
+              <img
+                src="images/autumn-spice-latte.png"
+                alt="Autumn Spice Latte"
+                class="img-fluid rounded"
+              />
+              <div class="overlay-text position-absolute top-50 start-50 translate-middle text-white">
+                <h3 class="desc-title">Autumn Spice Latte</h3>
+                <p class="desc">a cozy blend for crisp days.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="fresh-baked-daily position-relative">
+              <img
+                src="images/fresh-baked.png"
+                alt="Fresh Baked Daily"
+                class="img-fluid rounded"
+              />
+              <div class="overlay-text position-absolute top-50 start-50 translate-middle text-white">
+                <h3 class="desc-title">Fresh Baked Daily</h3>
+                <p class="desc">pair your coffee with a sweet treat!</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="fresh-baked-wrapper">
-        <div class="fresh-baked-daily">
-          <img src="images/fresh-baked.png" alt="Fresh Baked Daily">
-          <div class="overlay-text">
-            <h3 class="desc-title">Fresh Baked Daily</h3>
-            <p class="desc">pair your coffee with a sweet treat!</p>
-          </div>
+        <div class="limited mt-5">
+          <h3 class="limited-text">Limited Time Offer!</h3>
+          <p class="limited-code">
+            Show this code at the trailer to get 10% off:
+            <span class="code-highlight">ROAM10</span>
+          </p>
         </div>
-      </div>
-
-      <div class="limited">
-        <h3 class="limited-text">Limited Time Offer!</h3>
-        <p class="limited-code">Show this code at the trailer to get 10% off: 
-          <span class="code-highlight">ROAM10</span>
-        </p>
       </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer id="CONTACT-US">
-      <div class="footer-content">
-        <div class="contact-title">
+    <footer id="CONTACT-US" class="py-5 text-center">
+      <div class="footer-content container">
+        <div class="contact-title mb-4">
           <h1>CONTACT & CONNECT WITH US</h1>
         </div>
-        <div class="social-media-icons">
+        <div class="social-media-icons mb-3">
           <img src="images/instagram.png" alt="instagram icon" />
-          <img src="images/tiktok.png" alt="titkok icon" />
-          <img src="images/facebook.png" alt="facebook icon" /> 
+          <img src="images/tiktok.png" alt="tiktok icon" />
+          <img src="images/facebook.png" alt="facebook icon" />
           <img src="images/email.png" alt="email icon" />
         </div>
-        <div class="contact-info">
+        <div class="contact-info mb-3">
           <p>hello@roamingbean.com</p>
           <p><span class="number">Call or Text:</span> +63 912 345 6789</p>
         </div>
         <div class="weekly-schedule">
-          <p><span class="where-to-find-us">Find Our Weekly Schedule:</span> Where We’re Roaming</p>
+          <p>
+            <span class="where-to-find-us">Find Our Weekly Schedule:</span> Where
+            We’re Roaming
+          </p>
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
