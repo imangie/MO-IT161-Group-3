@@ -620,5 +620,38 @@ nav a.active::after {
   .about__divider{ width:56%; }
 }
 
+/* --- OUR STORY Bootstrap alignment refinement --- */
+.about .row {
+  align-items: center;        /* centers text + image vertically */
+  min-height: 80vh;           /* optional: gives balanced height spacing */
+}
+
+/* Center text properly on larger screens */
+.about__copy {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* ensures text content is vertically centered */
+  height: 100%;
+}
+
+/* Image refinement for consistent scale */
+.about__art img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive: stack + center text on small screens */
+@media (max-width: 767.98px) {
+  .about__copy {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .about .row {
+    min-height: auto;
+  }
+}
 
 
