@@ -325,6 +325,12 @@ html {
 .btn-brewing:hover{ filter: brightness(.95); }
 .btn-brewing:active{ transform: translateY(1px); }
 
+.best-section .card{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
 /* SPECIALS */
 .specials-title {
     text-align: center;
