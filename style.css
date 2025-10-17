@@ -532,11 +532,14 @@ ul li span:last-child {
   text-align:center;
   font-family:"Crimson Text", serif;
   font-weight:600;
-  font-size:clamp(56px, 7.5vw, 92px);
+  font-size:clamp(70px, 7.5vw, 92px);
   color:var(--green);
   text-transform:uppercase;
-  margin-top: 10px;
+  margin-top: 5px;
 }
+
+/* Add a little more space below the title so the body starts a bit lower */
+.about__title { margin-bottom: 80px !important; }
 
 .about__copy {
   max-width: 1400px;
@@ -564,7 +567,7 @@ ul li span:last-child {
   grid-area:art;
   justify-self:end;            /* push to the right edge */
   align-self:end;              /* anchor to bottom of section */
-  margin:0 6px 6px 0;          /* tiny inset from edges */
+  margin:0 -60px 6px 0;          /* tiny inset from edges */
   display:block;
 }
 
@@ -620,37 +623,51 @@ nav a.active::after {
   .about__divider{ width:56%; }
 }
 
-/* --- OUR STORY Bootstrap alignment refinement --- */
-.about .row {
-  align-items: center;        /* centers text + image vertically */
-  min-height: 80vh;           /* optional: gives balanced height spacing */
+/* Final visual overrides requested */
+.about__title { color: var(--secondary-color) !important; }
+
+@media (min-width: 992px) {
+  .about__title { font-size: 84px !important; line-height: 0.95; }
+  .about__copy p { font-size: 1.25rem !important; }
+  .about__signoff { font-size: 1.15rem !important; }
+  .about__copy { text-align: left !important; }
+
+  /* nudge camper closer and slightly higher to align with the paragraph end */
+  .about__art { right: 0 !important; bottom: 38px !important; width: 460px !important; }
+  .about__art img, .about__img { width: 100% !important; }
 }
 
-/* Center text properly on larger screens */
-.about__copy {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;    /* ensures text content is vertically centered */
-  height: 100%;
+@media (max-width: 991.98px) {
+  .about__title { font-size: 48px !important; }
+  .about__copy p { font-size: 1.05rem !important; }
+  .about__signoff { font-size: 1.02rem !important; }
+  .about__copy { text-align: center !important; }
+  .about__art { position: static !important; margin-top: 1.5rem; }
+  .about__art img, .about__img { width: 60%; max-width: 320px; margin: 0 auto; }
 }
 
-/* Image refinement for consistent scale */
-.about__art img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Responsive: stack + center text on small screens */
-@media (max-width: 767.98px) {
-  .about__copy {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+/* Mobile: ensure the Our Story content is centered and stacked cleanly */
+@media (max-width: 991.98px) {
   .about .row {
-    min-height: auto;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  .about__copy {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    width: 100% !important;
+    max-width: 720px !important;
+  }
+
+  /* make sure the image sits below the copy and is centered */
+  .about__art {
+    position: static !important;
+    margin-top: 1.5rem !important;
+    text-align: center !important;
   }
 }
 
