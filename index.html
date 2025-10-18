@@ -11,7 +11,7 @@
 
   <script src="script.js" defer></script>
 </head>
-  <body>
+  <body id="top">
     <nav>
       <a href="index.html">HOME</a>
       <a href="menu.html">MENU</a>
@@ -24,42 +24,48 @@
       <p class="tagline-title">Brewing Community, One Stop at a Time</p>
         <a href="menu.html" class="btn-primary">
           Browse Our Brews
-          <img src="images/arrow frame.png" alt="btn-icon">
+          <img src="images/arrow frame.png" alt="" aria-hidden="true">
         </a>
     </section>
 
-    <section class="about-us">
-    <h1>ABOUT US</h1>
+    <section class="about-us py-5">
+      <div class="container">
+        <h1 class="text-center mb-5">ABOUT US</h1>
 
-    <!-- Our Story (Left-aligned) -->
-    <div class="about-section left-align">
-        <div class="about-image">
-          <img src="images/coffee-showcase.jpg" alt="Person holding a cup of coffee" class="story-img"/>
+        <!-- Our Story -->
+        <div class="row align-items-center g-4 mb-5">
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="about-photo">
+              <img src="images/coffee-showcase.jpg" alt="Person holding a cup of coffee" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 text-center text-md-start">
+            <h2 class="h3 mb-3">Our Story</h2>
+            <p class="mb-0 fs-5">
+              At The Roaming Bean, we believe coffee is more than just a drink—it’s an experience.
+              We’ve turned a vintage trailer into a traveling coffee bar to bring high-quality brews
+              and a sense of community directly to you, wherever we go.
+            </p>
+          </div>
         </div>
-        <div class="about-text">
-        <h2>Our Story</h2>
-        <p class="story-text">
-            At The Roaming Bean, we believe coffee is more than just a drink—it's an experience. 
-            We've turned a vintage trailer into a traveling coffee bar to bring high-quality brews 
-            and a sense of community directly to you, wherever we go.
-        </p>
-        </div>
-    </div>
 
-    <!-- Our Vision (Right-aligned) -->
-    <div class="about-section right-align reverse">
-        <div class="about-image">
-          <img src="images/roaming-trailer.png" alt="The Roaming Bean on the Road" class="vision-img" />
+        <!-- Our Vision -->
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-6 order-md-2 d-flex justify-content-center">
+            <div class="about-photo">
+              <img src="images/roaming-trailer.png" alt="The Roaming Bean on the road" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 order-md-1 text-center text-md-start">
+            <h2 class="h3 mb-3">Our Vision</h2>
+            <p class="mb-0 fs-5">
+              Our vision is to become a traveling hub for connection, quality, and a shared love for
+              great coffee. We’re not just a coffee shop; we’re a community on wheels, dedicated to
+              bringing warmth, joy, and authenticity into every cup—one stop at a time.
+            </p>
+          </div>
         </div>
-        <div class="about-text">
-        <h2>Our Vision</h2>
-        <p class="vision-text">
-            Our vision is to become a traveling hub for connection, quality, and a shared love for 
-            great coffee. We're not just a coffee shop; we're a community on wheels, dedicated to 
-            bringing warmth, joy, and authenticity into every cup, one stop at a time.
-        </p>
-        </div>
-    </div>
+      </div>
     </section>
 
     <!-- ===== WHERE WE’RE ROAMING (brown banner) ===== -->
@@ -77,40 +83,48 @@
     </p>
     </section>
 
-    <!-- ===== BEST SELLERS ===== -->
-    <section class="best-section" aria-labelledby="best-title">
-    <h2 id="best-title" class="best-title">BEST SELLERS</h2>
+        <!-- ===== BEST SELLERS ===== -->
+  <section class="best-section" aria-labelledby="best-title">
+  <h2 id="best-title" class="best-title text-center">BEST SELLERS</h2>
 
-    <div class="cards" id="bestsellers">
-        <figure class="card">
-        <img src="images/iced-spanish-latte.jpg" alt="Iced Spanish Latte" />
-        <figcaption>
+  <div class="container">
+    <div class="row g-4 justify-content-center" id="bestsellers">
+
+      <div class="col-md-4">
+        <figure class="card text-center">
+          <img class="img-fluid rounded-2 w-100" src="images/iced-spanish-latte.jpg" alt="Iced Spanish Latte">
+          <figcaption class="mt-3">
             <div class="name">Iced Spanish Latte</div>
             <div class="price">185 Php</div>
-        </figcaption>
+          </figcaption>
         </figure>
+      </div>
 
-        <figure class="card">
-        <img src="images/americano.jpg" alt="Americano" />
-        <figcaption>
+      <div class="col-md-4">
+        <figure class="card text-center">
+          <img class="img-fluid rounded-2 w-100" src="images/americano.jpg" alt="Americano">
+          <figcaption class="mt-3">
             <div class="name">Americano</div>
             <div class="price">125 Php</div>
-        </figcaption>
+          </figcaption>
         </figure>
+      </div>
 
-        <figure class="card">
-        <img src="images/iced-matcha-latte.jpg" alt="Iced Matcha Latte" />
-        <figcaption>
+      <div class="col-md-4">
+        <figure class="card text-center">
+          <img class="img-fluid rounded-2 w-100" src="images/iced-matcha-latte.jpg" alt="Iced Matcha Latte">
+          <figcaption class="mt-3">
             <div class="name">Iced Matcha Latte</div>
             <div class="price">210 Php</div>
-        </figcaption>
+          </figcaption>
         </figure>
-    </div>
+      </div>
 
-    <a href="menu.html" class="btn-brewing">
-      See What’s Brewing
-    </a>
-    </section>
+    </div>
+  </div>
+
+  <a href="menu.html" class="btn-brewing">See What’s Brewing</a>
+</section>
 
         <!-- ===== SPECIALS===== -->
     <section id="specials">
@@ -152,7 +166,7 @@
         </div>
         <div class="social-media-icons">
           <img src="images/instagram.png" alt="instagram icon" />
-          <img src="images/tiktok.png" alt="titkok icon" />
+          <img src="images/tiktok.png" alt="tiktok icon" />
           <img src="images/facebook.png" alt="facebook icon" /> 
           <img src="images/email.png" alt="email icon" />
         </div>

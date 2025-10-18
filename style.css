@@ -162,59 +162,24 @@ body {
     line-height: 1.6;
 }
 
-/* About Section Containers */
-.about-section {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 60px;
-    width: 100%;
-    justify-content: center;
+/* About Us images: keep classic fixed size */
+.about-photo{
+  border-radius:12px;
+  overflow:hidden;
 }
-
-.about-text p, 
-.vision-text p {
-  font-size: 18px;
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
-
-/* Left-aligned section (Our Story) */
-.about-section.left-align {
-    flex-direction: row; /* image then text */
+/* Default: scale nicely with consistent ratio on small screens */
+@media (max-width: 767.98px){
+  .about-photo{ width:100%; aspect-ratio: 555 / 207; }
 }
-
-/* Right-aligned section (Our Vision) */
-.about-section.right-align {
-    flex-direction: row-reverse; /* text then image */
-}
-
-/* Image placeholder size */
-.about-image {
-    width: 555px;
-    height: 207px;
-    background-color: lightgray;
-    border-radius: 5px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.story-img {
-    object-position: 50% 30%; /* adjust as needed */
-}
-
-.vision-img {
-    object-position: 50% 50%; /* adjust as needed */
-}
-
-.about-text {
-    width: 45%;
-    text-align: left;
+/* md and up: restore original fixed dimensions */
+@media (min-width: 768px){
+  .about-photo{ width:555px; height:207px; }
 }
 
 /* Best Sellers Section Styling */
@@ -324,6 +289,12 @@ html {
 }
 .btn-brewing:hover{ filter: brightness(.95); }
 .btn-brewing:active{ transform: translateY(1px); }
+
+.best-section .card{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
 
 /* SPECIALS */
 .specials-title {
@@ -533,9 +504,10 @@ ul li span:last-child {
   font-family:"Crimson Text", serif;
   font-weight:600;
   font-size:clamp(56px, 7.5vw, 92px);
-  color:var(--green);
+  color:var(--secondary-color);
   text-transform:uppercase;
   margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .about__copy {
@@ -544,7 +516,7 @@ ul li span:last-child {
 }
 
 .about__copy p{
-  margin:0 0 16px;
+  margin:0 0 20px;
   font-size:clamp(18px, 1.8vw, 21px);
   line-height:1.52;
   color:var(--ink);
@@ -558,24 +530,6 @@ ul li span:last-child {
 }
 
 .about__signoff{ margin-top:6px; font-style:italic; }
-
-/* Truck column (bigger + lower-right) */
-.about__art{
-  grid-area:art;
-  justify-self:end;            /* push to the right edge */
-  align-self:end;              /* anchor to bottom of section */
-  margin:0 6px 6px 0;          /* tiny inset from edges */
-  display:block;
-}
-
-.about__art img {
-  width: min(40vw, 500px);  /* scales with screen size but caps at 500px */
-  height: auto;
-  opacity: 0.95;
-  display: block;
-  max-width: 100%;          /* prevents overflow of the parent */
-  object-fit: contain;
-}
 
 /* Nav Highlight */
 nav a.active,
