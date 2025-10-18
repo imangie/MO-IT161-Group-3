@@ -27,7 +27,8 @@ style.css # Main stylesheet
 
 - **HTML5** – Page structure
 - **CSS3** – Styling and layout
-- \*\*JavaScript (ES6) - Dynamic features
+- **JavaScript (ES6)** - Dynamic features
+- **Bootstrap** - Responsive layout
 
 ---
 
