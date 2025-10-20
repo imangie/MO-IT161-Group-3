@@ -5,6 +5,13 @@ This project showcases a fictional café, _The Roaming Bean_, with pages that in
 
 ---
 
+- ## 👥 Group Members
+- Cherry Angiela Ishizuka
+- Ainah Pagulayan
+- Mary Grace Ramos
+
+---
+
 ## 📂 Project Structure
 
 index.html # Homepage  
@@ -32,7 +39,18 @@ style.css # Main stylesheet
 
 ---
 
-- ## 👥 Group Members
-- Cherry Angiela Ishizuka
-- Ainah Pagulayan
-- Mary Grace Ramos
+## 🌐 Local Hosting (Apache Test)
+
+The project was tested locally using **XAMPP (Apache)** to verify Bootstrap integration and overall site functionality.
+
+**Setup Steps:**
+
+1. Installed XAMPP and started Apache.
+2. Moved the project folder (`MO-IT161-Web-Sys`) to `C:\xampp\htdocs\`.
+3. Accessed the site via `http://localhost/MO-IT161-Web-Sys/`.
+
+**Results:**
+
+- Bootstrap layout and styles loaded correctly.
+- JavaScript features worked as expected.
+- No console errors appeared during testing.
