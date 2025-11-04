@@ -39,6 +39,22 @@ style.css # Main stylesheet
 
 ---
 
+## 🧩 Task Ownership Summary
+
+All members contributed collaboratively across JavaScript, Bootstrap, and content creation.  
+Each person participated in coding, layout structuring, and refinement to ensure consistency across all pages.
+
+| Category                       | Subtasks                                                | Contributors         |
+| ------------------------------ | ------------------------------------------------------- | -------------------- |
+| **JavaScript (Interactivity)** | Navigation highlight, hover effects, back-to-top button | Cherry, Ainah, Grace |
+| **Bootstrap Integration**      | Responsive grid layout, containers, menu alignment      | Cherry, Ainah, Grace |
+| **Content Writing & UI Copy**  | About section, menu descriptions, headings              | Cherry, Ainah, Grace |
+| **Testing & Debugging**        | Functional and UI testing on multiple devices           | Cherry, Ainah, Grace |
+
+**Note:** Final integration, styling adjustments, and debugging were completed jointly to maintain a cohesive design and consistent user experience.
+
+---
+
 ## 🌐 Local Hosting (Apache Test)
 
 The project was tested locally using **XAMPP (Apache)** to verify Bootstrap integration and overall site functionality.
