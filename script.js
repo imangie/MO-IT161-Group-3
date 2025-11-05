@@ -1,3 +1,57 @@
+// ===== Smooth page cross-fade + loader =====
+document.addEventListener('DOMContentLoaded', () => {
+  // Ensure the loader element exists on every page
+  let loader = document.querySelector('.page-loader');
+  if (!loader) {
+    loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.innerHTML = '<div class="spinner" role="status" aria-label="Loading"></div>';
+    document.body.appendChild(loader);
+  }
+
+  const showLoader = () => loader.classList.add('visible');
+  const hideLoader = () => loader.classList.remove('visible');
+
+  // Fade-in on page load (and hide loader just in case)
+  document.body.classList.add('page-enter');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.remove('page-enter');
+      hideLoader();
+    });
+  });
+
+  // Intercept nav clicks to fade + show spinner
+  const navLinks = document.querySelectorAll('nav a[href]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      if (!href) return;
+
+      const url = new URL(href, window.location.href);
+
+      // 1) Same-page hash (e.g. "#CONTACT-US")
+      const isHashOnly = href.trim().startsWith('#');
+
+      // 2) Any link with #CONTACT-US (case-insensitive, even cross-page)
+      const isContactHash = (url.hash || '').toLowerCase() === '#contact-us';
+      if (isHashOnly || isContactHash) {
+        return;
+      }
+
+      const isSamePage = url.pathname === window.location.pathname;
+      if (isSamePage && url.hash) return;
+      e.preventDefault();
+      document.body.classList.add('page-fade-out');
+
+      showLoader();
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  });
+});
+
 // Best Sellers Image Hover Effect //
 const bestSellerImages = document.querySelectorAll("#bestsellers img");
 
@@ -56,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.id = 'backToTop';
     btn.href = '#top';
     btn.setAttribute('aria-label', 'Back to top');
-    btn.innerHTML = '↑'; // icon instead of text
+    btn.textContent = '↑'; // icon instead of text
     document.body.appendChild(btn);
   }
 
@@ -66,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     parent.remove();
   }
 
-  btn.innerHTML = '↑'; 
+  btn.textContent = '↑';
   btn.style.fontSize = '22px';
   btn.style.lineHeight = '1';
   btn.style.padding = '10px 14px';
