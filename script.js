@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Intercept nav clicks to fade + show spinner
-  const navLinks = document.querySelectorAll('nav a[href]');
+  const navLinks = document.querySelectorAll('nav a[href], a.js-page[href]');
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href') || '';
