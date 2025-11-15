@@ -12,17 +12,29 @@
   <script src="script.js" defer></script>
 </head>
   <body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="page-loader">
   <div class="spinner" role="status" aria-label="Loading"></div>
   </div>
 
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="menu.html">MENU</a>
-      <a href="our-story.html">OUR STORY</a>
-      <a href="index.html#CONTACT-US">CONTACT US</a>
+    <nav aria-label="Primary navigation" class="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__icon" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+      <div class="nav-links" id="primary-nav">
+        <a href="index.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="our-story.html">OUR STORY</a>
+        <a href="index.html#CONTACT-US">CONTACT US</a>
+      </div>
     </nav>
 
+    <main id="main-content" tabindex="-1">
     <section id="HOME">
       <h1 class="main-title">THE ROAMING BEAN</h1>
       <p class="tagline-title">Brewing Community, One Stop at a Time</p>
@@ -85,6 +97,30 @@
         Monday &ndash; Friday: 7:00 AM &ndash; 9:00 PM<br />
         Saturday &ndash; Sunday: 8:00 AM &ndash; 10:00 PM
     </p>
+
+    <div class="banner-highlights" role="list">
+      <article class="highlight" role="listitem">
+        <div class="icon" aria-hidden="true">📍</div>
+        <div>
+          <h3>Metro Meetups</h3>
+          <p>Weekend pop-ups across BGC, Makati, and more.</p>
+        </div>
+      </article>
+      <article class="highlight" role="listitem">
+        <div class="icon" aria-hidden="true">☕</div>
+        <div>
+          <h3>Seasonal Sips</h3>
+          <p>Limited brews &amp; pastry pairings every month.</p>
+        </div>
+      </article>
+      <article class="highlight" role="listitem">
+        <div class="icon" aria-hidden="true">🗓️</div>
+        <div>
+          <h3>Book the Trailer</h3>
+          <p>We cater private events, collabs, and pop-up residencies.</p>
+        </div>
+      </article>
+    </div>
     </section>
 
         <!-- ===== BEST SELLERS ===== -->
@@ -92,42 +128,52 @@
   <h2 id="best-title" class="best-title text-center">BEST SELLERS</h2>
 
   <div class="container">
-    <div class="row g-4 justify-content-center" id="bestsellers">
+    <div class="best-carousel" aria-label="Best sellers carousel">
+      <button class="carousel-control prev" type="button" data-carousel="prev" aria-controls="bestCarousel" aria-label="Show previous drink">
+        <span aria-hidden="true">&larr;</span>
+      </button>
+      <div class="carousel-viewport" id="bestCarousel" tabindex="0">
+        <div class="carousel-track" id="bestsellers">
+          <article class="carousel-card">
+            <figure class="card text-center">
+              <img class="img-fluid rounded-2 w-100" src="images/iced-spanish-latte.jpg" alt="Iced Spanish Latte">
+              <figcaption class="mt-3">
+                <div class="name">Iced Spanish Latte</div>
+                <div class="price">185 Php</div>
+              </figcaption>
+            </figure>
+          </article>
 
-      <div class="col-md-4">
-        <figure class="card text-center">
-          <img class="img-fluid rounded-2 w-100" src="images/iced-spanish-latte.jpg" alt="Iced Spanish Latte">
-          <figcaption class="mt-3">
-            <div class="name">Iced Spanish Latte</div>
-            <div class="price">185 Php</div>
-          </figcaption>
-        </figure>
+          <article class="carousel-card">
+            <figure class="card text-center">
+              <img class="img-fluid rounded-2 w-100" src="images/americano.jpg" alt="Americano">
+              <figcaption class="mt-3">
+                <div class="name">Americano</div>
+                <div class="price">125 Php</div>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="carousel-card">
+            <figure class="card text-center">
+              <img class="img-fluid rounded-2 w-100" src="images/iced-matcha-latte.jpg" alt="Iced Matcha Latte">
+              <figcaption class="mt-3">
+                <div class="name">Iced Matcha Latte</div>
+                <div class="price">210 Php</div>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
       </div>
-
-      <div class="col-md-4">
-        <figure class="card text-center">
-          <img class="img-fluid rounded-2 w-100" src="images/americano.jpg" alt="Americano">
-          <figcaption class="mt-3">
-            <div class="name">Americano</div>
-            <div class="price">125 Php</div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="col-md-4">
-        <figure class="card text-center">
-          <img class="img-fluid rounded-2 w-100" src="images/iced-matcha-latte.jpg" alt="Iced Matcha Latte">
-          <figcaption class="mt-3">
-            <div class="name">Iced Matcha Latte</div>
-            <div class="price">210 Php</div>
-          </figcaption>
-        </figure>
-      </div>
-
+      <button class="carousel-control next" type="button" data-carousel="next" aria-controls="bestCarousel" aria-label="Show next drink">
+        <span aria-hidden="true">&rarr;</span>
+      </button>
     </div>
   </div>
 
-  <a href="menu.html" class="btn-brewing js-page">See What's Brewing</a>
+  <div class="btn-brewing-wrapper">
+    <a href="menu.html" class="btn-brewing js-page">See What's Brewing</a>
+  </div>
 </section>
 
         <!-- ===== SPECIALS===== -->
@@ -162,11 +208,13 @@
       </div>
     </section>
 
+    </main>
     <!-- ===== FOOTER ===== -->
     <footer id="CONTACT-US">
       <div class="footer-content">
         <div class="contact-title">
           <h1>CONTACT & CONNECT WITH US</h1>
+          <hr class="footer-divider" aria-hidden="true">
         </div>
         <div class="social-media-icons">
           <img src="images/instagram.png" alt="instagram icon" />

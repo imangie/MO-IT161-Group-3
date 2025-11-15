@@ -12,18 +12,29 @@
   <script src="script.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page-loader">
   <div class="spinner" role="status" aria-label="Loading"></div>
   </div>
 
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="menu.html">MENU</a>
-    <a href="our-story.html">OUR STORY</a>
-    <a href="index.html#CONTACT-US">CONTACT US</a>
+  <nav aria-label="Primary navigation" class="nav">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__icon" aria-hidden="true">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+    <div class="nav-links" id="primary-nav">
+      <a href="index.html">HOME</a>
+      <a href="menu.html">MENU</a>
+      <a href="our-story.html">OUR STORY</a>
+      <a href="index.html#CONTACT-US">CONTACT US</a>
+    </div>
   </nav>
 
-  <main role="main">
+  <main role="main" id="main-content" tabindex="-1">
     <section id="menu" class="menu" aria-labelledby="menu-title">
       <h1 id="menu-title" class="menu-title">MENU</h1>
 

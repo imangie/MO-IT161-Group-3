@@ -100,84 +100,114 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Back to Top Button
-document.addEventListener('DOMContentLoaded', function () {
-  var btn = document.getElementById('backToTop');
+// Best sellers carousel controls
+document.addEventListener('DOMContentLoaded', () => {
+  const viewport = document.querySelector('.carousel-viewport');
+  const track = document.querySelector('#bestsellers');
+  const prevBtn = document.querySelector('[data-carousel="prev"]');
+  const nextBtn = document.querySelector('[data-carousel="next"]');
 
-  // make the link if it doesn't exist
+  if (!viewport || !track || !prevBtn || !nextBtn) return;
+
+  const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+  const getSlideWidth = () => {
+    const firstCard = track.querySelector('.carousel-card');
+    if (!firstCard) return viewport.clientWidth;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
+    return firstCard.getBoundingClientRect().width + gap;
+  };
+
+  const scrollBySlide = (direction) => {
+    const distance = getSlideWidth();
+    viewport.scrollBy({
+      left: direction * distance,
+      behavior: 'smooth'
+    });
+  };
+
+  const updateControls = () => {
+    if (!mediaQuery.matches) {
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
+
+    prevBtn.disabled = viewport.scrollLeft <= 0;
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth - 1;
+    nextBtn.disabled = viewport.scrollLeft >= maxScroll;
+  };
+
+  prevBtn.addEventListener('click', () => scrollBySlide(-1));
+  nextBtn.addEventListener('click', () => scrollBySlide(1));
+
+  viewport.addEventListener('scroll', updateControls);
+  window.addEventListener('resize', () => {
+    if (!mediaQuery.matches) {
+      viewport.scrollTo({ left: 0 });
+    }
+    updateControls();
+  });
+  if (typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', updateControls);
+  } else if (typeof mediaQuery.addListener === 'function') {
+    mediaQuery.addListener(updateControls);
+  }
+
+  updateControls();
+});
+
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('nav');
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinksWrapper = document.getElementById('primary-nav');
+
+  if (!nav || !toggle || !navLinksWrapper) return;
+
+  const setExpanded = (expanded) => {
+    toggle.setAttribute('aria-expanded', String(expanded));
+    navLinksWrapper.classList.toggle('open', expanded);
+  };
+
+  toggle.addEventListener('click', () => {
+    const currentlyExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    setExpanded(!currentlyExpanded);
+  });
+
+  navLinksWrapper.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        setExpanded(false);
+      }
+    });
+  });
+});
+
+// Back to Top Button
+document.addEventListener('DOMContentLoaded', () => {
+  let btn = document.getElementById('backToTop');
+
   if (!btn) {
     btn = document.createElement('a');
     btn.id = 'backToTop';
     btn.href = '#top';
-    btn.setAttribute('aria-label', 'Back to top');
-    btn.textContent = '↑'; // icon instead of text
     document.body.appendChild(btn);
   }
 
-  var parent = btn.parentElement;
-  if (parent && parent.classList && parent.classList.contains('backtop-row')) {
-    parent.parentNode.insertBefore(btn, parent.nextSibling);
-    parent.remove();
-  }
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = '<span aria-hidden="true">&#8593;</span>';
 
-  btn.textContent = '↑';
-  btn.style.fontSize = '22px';
-  btn.style.lineHeight = '1';
-  btn.style.padding = '10px 14px';
-  btn.style.width = '45px';
-  btn.style.height = '45px';
-  btn.style.display = 'flex';
-  btn.style.justifyContent = 'center';
-  btn.style.alignItems = 'center';
+  const toggleVisibility = () => {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    btn.classList.toggle('show', y > 800);
+  };
 
-  btn.style.cursor = 'pointer';
-  btn.style.transition = 'all 0.3s ease';
+  toggleVisibility();
+  window.addEventListener('scroll', toggleVisibility);
 
-  // place it on the RIGHT
-  btn.style.position = 'fixed';
-  btn.style.right = '24px';   
-  btn.style.left = 'auto';    
-  btn.style.bottom = '28px';
-  btn.style.zIndex = '9999';
-  btn.style.display = 'none';
-
-  // simple look (remove if you style in CSS)
-  btn.style.background = '#405B41';
-  btn.style.color = '#F2ECE0';
-  btn.style.padding = '10px 14px';
-  btn.style.borderRadius = '30px';
-  btn.style.textDecoration = 'none';
-  btn.style.boxShadow = '0 2px 6px rgba(0,0,0,.15)';
-
-    // --- Hover Effect ---
-  btn.addEventListener('mouseenter', function () {
-    btn.style.background = '#6B8E67'; // lighter green hover
-    btn.style.transform = 'translateY(-3px)';
-  });
-
-  btn.addEventListener('mouseleave', function () {
-    btn.style.background = '#405B41';
-    btn.style.transform = 'translateY(0)';
-  });
-
-  // show/hide when scrolling
-  window.addEventListener('scroll', function () {
-    var y = window.scrollY || document.documentElement.scrollTop || 0;
-    if (y > 800) {
-      btn.style.display = 'inline-block';
-    } else {
-      btn.style.display = 'none';
-    }
-  });
-
-  // click = smooth scroll to top
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
-
-
-
-
-
