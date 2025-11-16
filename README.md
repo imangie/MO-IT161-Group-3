@@ -41,17 +41,18 @@ style.css # Main stylesheet
 
 ## 🧩 Task Ownership Summary
 
-All members contributed collaboratively across JavaScript, Bootstrap, and content creation.  
-Each person participated in coding, layout structuring, and refinement to ensure consistency across all pages.
+The development of this project was a collaborative effort across layout structuring, JavaScript enhancements, and content creation. All members contributed to establishing the foundation of the site, ensuring the structure and components functioned as intended.
+
+Cherry led the UI refinement, including accessibility improvements, styling consistency, and final interface polishing. Cherry was also responsible for the majority of testing and debugging, performing cross-device checks, fixing layout issues, and ensuring smooth functionality across the entire site.
 
 | Category                       | Subtasks                                                | Contributors         |
 | ------------------------------ | ------------------------------------------------------- | -------------------- |
 | **JavaScript (Interactivity)** | Navigation highlight, hover effects, back-to-top button | Cherry, Ainah, Grace |
 | **Bootstrap Integration**      | Responsive grid layout, containers, menu alignment      | Cherry, Ainah, Grace |
 | **Content Writing & UI Copy**  | About section, menu descriptions, headings              | Cherry, Ainah, Grace |
-| **Testing & Debugging**        | Functional and UI testing on multiple devices           | Cherry, Ainah, Grace |
+| **Testing & Debugging**        | Functional and UI testing on multiple devices           | Cherry               |
 
-**Note:** Final integration, styling adjustments, and debugging were completed jointly to maintain a cohesive design and consistent user experience.
+**Note:** Final alignment, styling adjustments, and polish were completed jointly, with Cherry leading UI improvements and full-site quality assurance.
 
 ---
 
