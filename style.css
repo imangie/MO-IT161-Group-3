@@ -89,10 +89,13 @@ body.page-fade-out > *:not(nav) {
 nav {
     color: var(--primary-color);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px clamp(16px, 6vw, 50px);
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: clamp(8px, 2.4vw, 14px) clamp(20px, 5.5vw, 52px);
+    padding-left: clamp(36px, 9vw, 110px);
     background-color: var(--secondary-color);
 
     position: sticky;
@@ -101,6 +104,33 @@ nav {
 
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
+}
+
+.nav-header {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-bottom: 0;
+}
+
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    max-width: 210px;
+    margin-left: 25px;
+}
+
+.nav-logo::after {
+    display: none !important;
+}
+
+.nav-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: clamp(38px, 5vw, 54px);
 }
 
 /* Navigation links */
@@ -121,7 +151,8 @@ nav a {
     align-items: center;
     flex-wrap: wrap;
     gap: clamp(12px, 5vw, 150px);
-    width: 100%;
+    width: auto;
+    flex: 1;
 }
 
 .nav-toggle {
@@ -191,8 +222,15 @@ nav a:hover {
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch;
     gap: 8px;
+    padding: clamp(10px, 3.5vw, 18px) clamp(20px, 8vw, 44px);
+    padding-left: clamp(30px, 12vw, 70px);
+  }
+  .nav-header {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 4px;
   }
   .nav-toggle {
     display: inline-flex;
@@ -203,6 +241,8 @@ nav a:hover {
     align-items: flex-end;
     gap: 4px;
     display: none;
+    width: 100%;
+    flex: initial;
   }
 .nav-links.open {
     display: flex;
@@ -435,6 +475,13 @@ body.page-enter {
     align-items: stretch !important;
 }
 
+@media (max-width: 576px) {
+    .about-us h2,
+    .about-us p {
+        text-align: center;
+    }
+}
+
 /* About Us images: keep classic fixed size */
 .about-photo{
   border-radius:12px;
@@ -647,6 +694,21 @@ html {
 #bestsellers img.hovered {
   transform: scale(1.05);
   filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+  .carousel-card {
+    transition: transform 0.35s ease;
+  }
+
+  .carousel-card.is-active {
+    transform: translateY(-6px);
+  }
+
+  .carousel-card.is-active img {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+  }
 }
 
 .best-title{
@@ -957,6 +1019,10 @@ footer {
   margin-top: 40px; /* adds gap between categories */
 }
 
+.menu-section h2:first-of-type {
+  margin-top: 0;
+}
+
 .subtitle {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   font-style: italic;
@@ -976,36 +1042,41 @@ ul {
 }
 
 ul li {
-  display: flex;
-  justify-content: flex-start; /* keep items side by side */
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
   font-size: clamp(1.1rem, 3.4vw, 1.4rem);
   margin: 6px 0;
 }
 
 ul li span:first-child {
-  flex: 1;
   text-align: left;
-  padding-right: 40px;   /* 👈 adds space before the price */
+  padding-right: 32px;
 }
 
 ul li span:last-child {
   text-align: right;
   min-width: 60px;       /* keeps prices aligned */
+  justify-self: end;
 }
 
 @media (max-width: 600px){
   ul li {
-    flex-direction: column;
-    align-items: flex-start;
     font-size: 1.1rem;
+    align-items: flex-start;
   }
 
   ul li span:last-child {
-    text-align: left;
     min-width: auto;
+  }
+
+  .menu-section h2 {
+    margin-top: 24px;
+  }
+
+  .menu-section h2:first-of-type {
+    margin-top: 0;
   }
 }
 

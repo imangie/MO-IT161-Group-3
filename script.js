@@ -110,6 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!viewport || !track || !prevBtn || !nextBtn) return;
 
   const mediaQuery = window.matchMedia('(max-width: 768px)');
+  const cards = Array.from(track.querySelectorAll('.carousel-card'));
+  let currentIndex = 0;
 
   const getSlideWidth = () => {
     const firstCard = track.querySelector('.carousel-card');
@@ -118,12 +120,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return firstCard.getBoundingClientRect().width + gap;
   };
 
-  const scrollBySlide = (direction) => {
-    const distance = getSlideWidth();
-    viewport.scrollBy({
-      left: direction * distance,
-      behavior: 'smooth'
+  const clampIndex = (value) => {
+    if (!cards.length) return 0;
+    return Math.max(0, Math.min(value, cards.length - 1));
+  };
+
+  const applyActiveState = () => {
+    if (!cards.length) return;
+    if (!mediaQuery.matches) {
+      cards.forEach(card => card.classList.remove('is-active'));
+      return;
+    }
+
+    cards.forEach((card, idx) => {
+      card.classList.toggle('is-active', idx === currentIndex);
     });
+  };
+
+  const syncActiveFromScroll = () => {
+    if (!cards.length) return;
+    if (!mediaQuery.matches) {
+      cards.forEach(card => card.classList.remove('is-active'));
+      return;
+    }
+
+    const distance = getSlideWidth();
+    if (!distance) return;
+    currentIndex = clampIndex(Math.round(viewport.scrollLeft / distance));
+    applyActiveState();
   };
 
   const updateControls = () => {
@@ -138,23 +162,49 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.disabled = viewport.scrollLeft >= maxScroll;
   };
 
-  prevBtn.addEventListener('click', () => scrollBySlide(-1));
-  nextBtn.addEventListener('click', () => scrollBySlide(1));
+  const moveCarousel = (direction) => {
+    if (!mediaQuery.matches || !cards.length) return;
+    const distance = getSlideWidth();
+    if (!distance) return;
+    const targetIndex = clampIndex(currentIndex + direction);
+    if (targetIndex === currentIndex) return;
 
-  viewport.addEventListener('scroll', updateControls);
+    currentIndex = targetIndex;
+    viewport.scrollTo({
+      left: targetIndex * distance,
+      behavior: 'smooth'
+    });
+    applyActiveState();
+  };
+
+  prevBtn.addEventListener('click', () => moveCarousel(-1));
+  nextBtn.addEventListener('click', () => moveCarousel(1));
+
+  viewport.addEventListener('scroll', () => {
+    updateControls();
+    syncActiveFromScroll();
+  });
   window.addEventListener('resize', () => {
     if (!mediaQuery.matches) {
       viewport.scrollTo({ left: 0 });
     }
     updateControls();
+    syncActiveFromScroll();
   });
   if (typeof mediaQuery.addEventListener === 'function') {
-    mediaQuery.addEventListener('change', updateControls);
+    mediaQuery.addEventListener('change', () => {
+      updateControls();
+      syncActiveFromScroll();
+    });
   } else if (typeof mediaQuery.addListener === 'function') {
-    mediaQuery.addListener(updateControls);
+    mediaQuery.addListener(() => {
+      updateControls();
+      syncActiveFromScroll();
+    });
   }
 
   updateControls();
+  syncActiveFromScroll();
 });
 
 // Mobile navigation toggle
